@@ -135,7 +135,7 @@ app.get("/", (req, res) => {
 });
 
 // Redirection vers Discord OAuth
-app.get("auth/discord", (req, res) => {
+app.get("/auth/discord", (req, res) => {
   const params = new URLSearchParams({
     client_id: DISCORD_CLIENT_ID,
     redirect_uri: DISCORD_REDIRECT_URI,
@@ -146,7 +146,7 @@ app.get("auth/discord", (req, res) => {
 });
 
 // Callback Discord OAuth
-app.get("auth/discord/callback", async (req, res) => {
+app.get("/auth/discord/callback", async (req, res) => {
   const { code } = req.query;
 
   if (!code) {
@@ -205,7 +205,7 @@ app.get("auth/discord/callback", async (req, res) => {
 });
 
 // Vérifier la session
-app.get("auth/me", (req, res) => {
+app.get("/auth/me", (req, res) => {
   if (req.session.user) {
     res.json({ user: req.session.user });
   } else {
@@ -214,7 +214,7 @@ app.get("auth/me", (req, res) => {
 });
 
 // Déconnexion
-app.post("auth/logout", (req, res) => {
+app.post("/auth/logout", (req, res) => {
   req.session.destroy();
   res.json({ success: true });
 });
@@ -676,11 +676,11 @@ server.listen(PORT, () => {
 ╚═══════════════════════════════════════════════════════════╝
 
 Routes disponibles:
-  - GET  auth/discord          : Connexion Discord
-  - GET  auth/discord/callback : Callback OAuth
-  - GET  auth/me               : Session utilisateur
-  - POST auth/logout           : Déconnexion
-  - GET  api/box/:discordId    : Récupérer une box
+  - GET  /auth/discord          : Connexion Discord
+  - GET  /auth/discord/callback : Callback OAuth
+  - GET  /auth/me               : Session utilisateur
+  - POST /auth/logout           : Déconnexion
+  - GET  /api/box/:discordId    : Récupérer une box
 
 Events Socket.IO:
   - auth:login    : Authentification socket
