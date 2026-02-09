@@ -55,6 +55,7 @@ app.use(
     cookie: {
       secure: process.env.NODE_ENV === "production",
       httpOnly: true,
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 jours
     },
   })
@@ -129,9 +130,9 @@ let draftConfig = {
 // ============================================
 
 // Redirection vers '/' (test)
-//app.get("/", (req, res) => {
-//  res.redirect('https://pvp-frontend-nu.vercel.app/');
-//});
+app.get("/", (req, res) => {
+  res.redirect('https://pvp-frontend-nu.vercel.app/');
+});
 
 // Redirection vers Discord OAuth
 app.get("/auth/discord", (req, res) => {
