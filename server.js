@@ -128,6 +128,11 @@ let draftConfig = {
 // DISCORD OAUTH2
 // ============================================
 
+// Redirection vers '/' (test)
+app.get("/", (req, res) => {
+  res.send("Backend PvP est en ligne 🚀");
+});
+
 // Redirection vers Discord OAuth
 app.get("/auth/discord", (req, res) => {
   const params = new URLSearchParams({
