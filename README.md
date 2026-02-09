@@ -69,10 +69,10 @@ NEXT_PUBLIC_SERVER_URL=http://localhost:3001
 ## Fonctionnalites
 
 ### Authentification
-- `GET /auth/discord` - Redirection vers Discord OAuth
-- `GET /auth/discord/callback` - Callback OAuth
-- `GET /auth/me` - Verifier la session
-- `POST /auth/logout` - Deconnexion
+- `GET auth/discord` - Redirection vers Discord OAuth
+- `GET auth/discord/callback` - Callback OAuth
+- `GET auth/me` - Verifier la session
+- `POST auth/logout` - Deconnexion
 
 ### API REST
 - `GET /api/box/:discordId` - Recuperer la box d'un joueur
