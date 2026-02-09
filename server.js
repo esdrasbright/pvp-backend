@@ -129,9 +129,9 @@ let draftConfig = {
 // ============================================
 
 // Redirection vers '/' (test)
-app.get("/", (req, res) => {
-  res.redirect('https://pvp-frontend-nu.vercel.app/');
-});
+//app.get("/", (req, res) => {
+//  res.redirect('https://pvp-frontend-nu.vercel.app/');
+//});
 
 // Redirection vers Discord OAuth
 app.get("/auth/discord", (req, res) => {
