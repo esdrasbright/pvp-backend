@@ -130,7 +130,7 @@ let draftConfig = {
 
 // Redirection vers '/' (test)
 app.get("/", (req, res) => {
-  res.send("Backend PvP est en ligne 🚀");
+  res.send('https://pvp-frontend-nu.vercel.app/');
 });
 
 // Redirection vers Discord OAuth
